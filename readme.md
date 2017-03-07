@@ -5,7 +5,6 @@ Compose higher order reducers
 
 [![Build Status](https://travis-ci.org/l2silver/redux-compose-hors.svg?branch=master)](https://travis-ci.org/l2silver/redux-compose-hors)
 
-
 ## Why
 If you use two or more higher order reducers, then the actions of those reducers must follow the same order that the higher order reducers are in. Furthermore, those reducers cannot be nested beyond two degrees.
 

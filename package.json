@@ -19,7 +19,8 @@
     "redux",
     "compose",
     "hors",
-    "redux-compose-hors"
+    "redux-compose-hors",
+    "batched-actions"
   ],
   "author": "Leigh Silverstein",
   "license": "ISC",

@@ -1,24 +1,25 @@
-redux-retype-actions
+redux-compose-hors
 =====================
 
-Rename action types
+Compose higher order reducers
 
-[![Build Status](https://travis-ci.org/l2silver/redux-retype-actions.svg?branch=master)](https://travis-ci.org/l2silver/redux-retype-actions)
+[![Build Status](https://travis-ci.org/l2silver/redux-compose-hors.svg?branch=master)](https://travis-ci.org/l2silver/redux-compose-hors)
 
 
 ## Why
-If you use redux-batched-actions with any kind of redux dev tools, the batched actions show up simply as BATCH_ACTION, which doesn't tell you a whole lot about the action. Now you can easily rename a batch action to something more useful. Although this tool works with any kind of action, I can't think of any other use cases outside of batched-actions
+If you use two or more higher order reducers, then the actions of those reducers must follow the same order that the higher order reducers are in. Furthermore, those reducers cannot be nested beyond two degrees.
 
-```js
-npm install --save redux-retype-actions
+```
+npm install --save redux-compose-hors
 ```
 
 ## Usage
 
-```js
+```
 import {createStore} from 'redux';
 import {batchActions, enableBatching} from 'redux-batched-actions';
 import {retypeAction, enableRetyping} from 'redux-retype-actions';
+import composeHors from 'redux-compose-hors';
 import {createAction} from 'redux-actions';
 
 const doThing = createAction('DO_THING')
@@ -32,7 +33,8 @@ function reducer(state, action) {
   }
 }
 
-const store = createStore(enableRetyping(enableBatching(reducer)), initialState)
+const store = createStore(composeHors(reducer, enableRetyping, enableBatching), initialState)
 const doMultipleThings = retypeAction('DO_MULTIPLE_THINGS', batchActions([doThing(), doOther()]))
-store.dispatch(doMultipleThings)
+const doMultipleThingsTwice = batchActions([doMultipleThings, doMultipleThings])
+store.dispatch(doMultipleThingsTwice)
 ```

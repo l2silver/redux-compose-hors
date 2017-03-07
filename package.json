@@ -1,7 +1,7 @@
 {
-  "name": "redux-overlord",
+  "name": "redux-compose-hors",
   "version": "1.0.0",
-  "description": "Access combinedReducers state",
+  "description": "Combine higher order reducers",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf dist",
@@ -13,19 +13,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/l2silver/redux-overlord.git"
+    "url": "git+https://github.com/l2silver/redux-compose-hors.git"
   },
   "keywords": [
     "redux",
-    "overlord",
-    "redux-overlord"
+    "compose",
+    "hors",
+    "redux-compose-hors"
   ],
   "author": "Leigh Silverstein",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/l2silver/redux-overlord/issues"
+    "url": "https://github.com/l2silver/redux-compose-hors/issues"
   },
-  "homepage": "https://github.com/l2silver/redux-overlord#readme",
+  "homepage": "https://github.com/l2silver/redux-compose-hors#readme",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
